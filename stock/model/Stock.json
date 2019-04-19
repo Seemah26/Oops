@@ -1,17 +1,18 @@
-[{"name":"SBI Bank",
-"share number":12,
-"share price":120
-},
-{"name":"SBI Bank",
+[
+{"name":"SBI",
 "share number":12,
 "share price":190
 },
-{"name":"ICICI Bank",
+{"name":"ICICI",
 "share number":15,
 "share price":120
 },
-{"name":"HDFC Bank",
+{"name":"HDFC",
 "share number":18,
+"share price":520
+},
+{"name":"HDFC7",
+"share number":180,
 "share price":520
 }
 ]

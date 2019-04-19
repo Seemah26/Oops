@@ -1,15 +1,16 @@
 
 package com.bridgelabz.util.datastructure;
 
-public class Node<T> {
-	public T value;
-	public Node<T> nextRef;
+
+public class Node<E> {
+	public E value;
+	public Node<E> nextRef;
 	public String data1;
 	public int data;
-	public Node<T> nextNode;
+	public Node<E> nextNode;
 
-	Deque<T> front;
-	Deque<T> rear;
+	Deque<E> front;
+	Deque<E> rear;
 	public static int size = 0;
 
 	public Node() {
@@ -17,45 +18,45 @@ public class Node<T> {
 		nextRef = null;
 	}
 
-	public Node(T data, Node<T> next) {
+	public Node(E data, Node<E> next) {
 		this.value = data;
 		this.nextRef = next;
 	}
 
-	public T getValue() {
+	public E getValue() {
 		return value;
 	}
 
-	public void setValue(T value) {
-		this.value = value;
+	public void setValue(E share) {
+		this.value = share;
 	}
 
-	public Node<T> getNextRef() {
+	public Node<E> getNextRef() {
 		return nextRef;
 	}
 
-	public void setNextRef(Node<T> ref) {
+	public void setNextRef(Node<E> ref) {
 		this.nextRef = ref;
 	}
 
-	public Node<T> getSize() {
+	public Node<E> getSize() {
 		return this.getSize();
 	}
 
-	public void setSize(Node<T> size) {
+	public void setSize(Node<E> size) {
 		this.nextRef = size;
 
 	}
 
-	public void addRear(T c) {
+	public void addRear(E c) {
 		if (front == null) // if no element in list
 		{
-			Deque<T> tNode = new Deque<T>(c);
+			Deque<E> tNode = new Deque<>(c);
 			front = tNode;
 			rear = front;
 		} else // if element in list
 		{
-			Deque<T> tNode = new Deque<>(c);
+			Deque<E> tNode = new Deque<>(c);
 			rear.next = tNode;
 			tNode.pre = rear;
 			rear = tNode;
@@ -64,8 +65,8 @@ public class Node<T> {
 	}
 
 	// remove front
-	public T removeFront() {
-		T val = null;
+	public E removeFront() {
+		E val = null;
 		if (front == null) {
 			System.out.println("No elements to delete");
 		} else {
@@ -75,7 +76,7 @@ public class Node<T> {
 		size--;
 		return val;
 	}
-
+/*
 	// remove rear
 	public T removeRear() {
 		T val = null;
@@ -120,7 +121,7 @@ public class Node<T> {
 		}
 		size++;
 	}
-
+*/
 	public class Deque<E> {
 
 		public E data;
@@ -138,9 +139,9 @@ public class Node<T> {
 			this.pre = null;
 		}
 	}
-	public int size1() {
+	/*public int size1() {
 		return Node.size();
-	}
+	}*/
 	
 
 }

@@ -1,4 +1,4 @@
-package com.bridgelabz.clinic.data.impl;
+/*package com.bridgelabz.clinic.data.impl;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,14 +12,14 @@ import org.json.simple.JSONObject;
 
 import com.bridgelabz.clinic.data.DoctorData;
 import com.bridgelabz.clinic.models.Doctor;
-import com.bridgelabz.data.main.ClinicUtility;
+import com.bridgelabz.opps.commonmethods.OopsCommonMethod;
 import com.google.gson.Gson;
 
 public class DoctorDataImpl implements DoctorData {
 	static List<Doctor> listDoctor = new ArrayList<Doctor>();
 	static final String doctor_File = "D:\\JAVA\\javaproject\\src\\com\\bridgelabz\\clinic\\models\\doctor.json";
-   JSONArray jsonArray;
-   JSONObject jobject=new JSONObject();
+    JSONArray jsonArray;
+    JSONObject jobject=new JSONObject();
 	@Override
 	public void addDoctor() {
 		String doct = null;
@@ -28,47 +28,32 @@ public class DoctorDataImpl implements DoctorData {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		/*try {
+		try {
 			//listDoctor = ClinicUtility.userReadValue(doct, Doctor.class);
 			System.out.println("File is not empty!");
 		} catch (Exception e) {
 			System.out.println("File is empty!");
-		}*/
+		}
 		Doctor doctor = new Doctor();
 	//	System.out.println("Setting id");
 		doctor.setId(listDoctor.size() + 1);
 		System.out.println("Id set");
 		System.out.println("Enter the doctor's name");
-		doctor.setName(ClinicUtility.getString());
+		doctor.setName(OopsCommonMethod.getString());
 		System.out.println("Enter the specialization");
-		doctor.setSpeciality(ClinicUtility.getString());
+		doctor.setSpeciality(OopsCommonMethod.getString());
 		System.out.println("Enter the availability");
-		doctor.setAvailability(ClinicUtility.getString());
+		doctor.setAvailability(OopsCommonMethod.getString());
 		listDoctor.add(doctor);
 		System.out.println("Doctor added successfully");
 		
-		try {
-			ClinicUtility.writeToFile(doctor_File, listDoctor);
-		} catch (JsonGenerationException e) {
-
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		/*try {
-			WriteFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+		
 	}
 
 	public void searchDoctor() {
 		System.out.println(
 				"Enter choice- 1:Search by ID \n 2:Search By Name\n 3:Search By Specialization\n4:Search By Availability");
-		int choice = ClinicUtility.getInt();
+		int choice = OopsCommonMethod.getInt();
 		switch (choice) {
 		case 1:
 			System.out.println("Searching by id");
@@ -134,10 +119,11 @@ public class DoctorDataImpl implements DoctorData {
 	}
 
 	private static Doctor searchById() throws IOException {
-		String string = ClinicUtility.readJsonFile(doctor_File);
-		listDoctor = ClinicUtility.userReadValue(string, Doctor.class);
+		//readfile();
+		//String string = OopsCommonMethod.readJsonFile(doctor_File);
+		//listDoctor = OopsCommonMethod.userReadValue(string, Doctor.class);
 		System.out.println("Enter the doctor's id to be searched");
-		int id = ClinicUtility.getInt();
+		int id = OopsCommonMethod.getInt();
 		for (Doctor doctor : listDoctor) {
 			if (id == doctor.getId()) {
 				return doctor;
@@ -147,12 +133,12 @@ public class DoctorDataImpl implements DoctorData {
 		return null;
 	}
 	public static List<Doctor> searchByName() throws IOException {
-		String string = ClinicUtility.readJsonFile(doctor_File);
+		//String string = ClinicUtility.readJsonFile(doctor_File);
 		try {
-			listDoctor = ClinicUtility.userReadValue(string, Doctor.class);
+			//listDoctor = ClinicUtility.userReadValue(string, Doctor.class);
 			List<Doctor> list = new ArrayList<>();
 			System.out.println("Enter the doctor's name to be searched");
-			String name = ClinicUtility.getString();
+			//String name = ClinicUtility.getString();
 			System.out.println(name);
 			for (Doctor doctor : listDoctor) {
 				if (name.equals(doctor.getName())) {
@@ -213,3 +199,4 @@ public class DoctorDataImpl implements DoctorData {
 	}
 
 }
+*/

@@ -40,7 +40,7 @@ public class PatientDataImpl implements PatientData{
 		listPatient.add(patient);
 		System.out.println("Patient added successfully");
 		try {
-			ClinicUtility.writeToFile(patient_File, listPatient);
+	//		ClinicUtility.writeToFile(patient_File, listPatient);
 		} catch (JsonGenerationException e) {
 
 			e.printStackTrace();
